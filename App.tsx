@@ -1,21 +1,33 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
+import { useQuery } from 'react-query';
+import { QueryClient, QueryClientProvider } from 'react-query'
+import AppLayout from './src/components/AppLayout';
+import StarShipCard from './src/screen/StarShipScreen';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+ 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+    },
   },
-});
+})
+ 
+ function App() {
+   return(
+    <QueryClientProvider client={queryClient}>
+      <AppLayout title="Starships">
+        <StarShipCard/>
+      </AppLayout>
+    </QueryClientProvider>
+   ) 
+ }
+
+ 
+
+
+
+export default App;
+
+
