@@ -1,10 +1,8 @@
 import React from 'react';
 import { StatusBar,  StyleSheet, View } from 'react-native';
 import { ActivityIndicator, Card, Colors, Text, Title, Button } from 'react-native-paper';
-import { NetworkConsumer, NetworkProvider } from 'react-native-offline';
-import { useQuery } from 'react-query';
-import fetchAsync from '../lib/fetch';
-import { DATA } from '../../data';
+
+
 
 interface StarShipCardProps {
     title:string;

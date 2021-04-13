@@ -8,9 +8,9 @@ import { Title, TextInput, Button } from 'react-native-paper';
 
 
 
-export default function App() {
+ 
 
-
+  const LoginScreen = () => {
   function onWriteText(){
     console.log('ok');
   }
@@ -21,8 +21,8 @@ export default function App() {
         <Title > Welcome to startport </Title>
       </View>
       <View>
-        <TextInput label="Email"   value={App} onChangeText={onWriteText} style={styles.paragraph} />
-        <TextInput label="Password"  value={App} onChangeText={onWriteText} style={styles.paragraph} />
+        <TextInput label="Email"    onChangeText={onWriteText} style={styles.paragraph} />
+        <TextInput label="Password"   onChangeText={onWriteText} style={styles.paragraph} />
       </View>
       <View>
         <Button mode="contained" onPress={'Pressed'}>
@@ -34,6 +34,7 @@ export default function App() {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -53,3 +54,5 @@ const styles = StyleSheet.create({
    
   }
 });
+
+export default LoginScreen;
