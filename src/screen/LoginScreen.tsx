@@ -4,36 +4,33 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Title, TextInput, Button } from 'react-native-paper';
 
 
-
-
-
-
- 
-
-  const LoginScreen = () => {
-  function onWriteText(){
-    console.log('ok');
+  export default function LoginScreen(){
+    function onWriteText(){
+      console.log('ok');
+    }
+  
+    return (
+      <View style={styles.container}>
+        <View>
+          <Title > Welcome to startport </Title>
+        </View>
+        <View>
+          <TextInput label="Email" placeholder="Email"    onChangeText={onWriteText} style={styles.paragraph} />
+          <TextInput label="Password"  placeholder="Password" onChangeText={onWriteText} style={styles.paragraph} />
+        </View>
+        <View>
+          <Button mode="contained" onPress={onWriteText}>
+            Login
+          </Button>
+        </View>
+        
+        
+      </View>
+    );
   }
+  
+  
 
-  return (
-    <View style={styles.container}>
-      <View>
-        <Title > Welcome to startport </Title>
-      </View>
-      <View>
-        <TextInput label="Email"    onChangeText={onWriteText} style={styles.paragraph} />
-        <TextInput label="Password"   onChangeText={onWriteText} style={styles.paragraph} />
-      </View>
-      <View>
-        <Button mode="contained" onPress={'Pressed'}>
-          Login
-        </Button>
-      </View>
-      
-      
-    </View>
-  );
-}
 
 
 const styles = StyleSheet.create({
@@ -54,5 +51,3 @@ const styles = StyleSheet.create({
    
   }
 });
-
-export default LoginScreen;
